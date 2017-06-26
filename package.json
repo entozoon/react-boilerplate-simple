@@ -4,11 +4,11 @@
   "description": "Yet another..",
   "main": "index.html",
   "scripts": {
-    "1": "babel src --out-file build/app.js --presets=react,es2015 --watch",
-    "2": "node-sass src/app.scss --output build/ --output-style compressed --watch",
-    "3": "browser-sync start --server --open local --files '**/*.html, build/**'",
-    "start": "start npm run 1 && start npm run 2 && npm run 3",
-    "start-without-sync": "opn index.html & babel src --out-file build/app.js --presets=react,es2015 --watch & node-sass src/app.scss --output build/ --output-style compressed --watch"
+    "js": "babel src --out-file build/app.js --presets=react,es2015 --watch",
+    "scss": "node-sass src/app.scss --output build/ --output-style compressed --watch",
+    "browser": "browser-sync start --server --open local --files '**/*.html, build/**'",
+    "start": "concurrently \"npm run js\" \"npm run scss\" \"npm run browser\"",
+    "start-no-sync": "concurrently \"npm run js\" \"npm run scss\" \"opn index.html\""
   },
   "repository": {
     "type": "git",
