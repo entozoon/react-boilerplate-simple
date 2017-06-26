@@ -6,7 +6,7 @@
   "scripts": {
     "js": "babel src --out-file build/app.js --presets=react,es2015 --watch",
     "scss": "node-sass src/app.scss --output build/ --output-style compressed --watch",
-    "browser": "browser-sync start --server --open local --files '**/*.html, build/**'",
+    "browser": "browser-sync start --server --open local --files \"**/*.html, build/**\"",
     "start": "concurrently \"npm run js\" \"npm run scss\" \"npm run browser\"",
     "start-no-sync": "concurrently \"npm run js\" \"npm run scss\" \"opn index.html\""
   },
